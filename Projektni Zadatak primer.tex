@@ -1,0 +1,180 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX templejt za područje bivše Jugoslavije
+% Version 1.0 (13/3/22)
+%
+%
+% Autor: Prometej
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------------------------------------------------------------------
+%	PAKETI
+%-----------------------------------------------------------------------
+\documentclass[12pt,serbian]{article} % Definisanje klase dokumenta i jezika -- srpski jezik
+%\documentclass[12pt, croatian]{article}
+% Definisanje klase dokumenta i jezika -- hrvatski jezik
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[serbian]{babel}
+%\usepackage[Croatian]{babel}
+\usepackage[margin=0.8in,left=0.8in,includefoot]{geometry}
+\usepackage{ragged2e}
+\def\dj{d\kern-0.4em\char"16\kern-0.1em}
+\def\Dj{\mbox{\raise0.3ex\hbox{-}\kern-0.4em D}}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{amsfonts}
+\usepackage{setspace}
+\usepackage{pdfpages}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage[shortlabels]{enumitem}
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{csvsimple}
+\usepackage[nottoc,numbib]{tocbibind}
+\setcounter{tocdepth}{4} % dubina sadržaja 
+% 1 section,
+% 2 subsection,
+% 3 subsubsection
+% 4 paragraph
+% dubina sadržaj
+\setcounter{secnumdepth}{4}
+\usepackage[hidelinks]{hyperref}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor={blue},
+    pdftitle={Overleaf Example},
+    }
+%-----------------------------------------------------------------------
+%	PAKETI
+%-----------------------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%% SAMO ZA UPOTREBU ĆIRILICE %%%%%%%%%%%%%%%%%%%%%%%%
+% UKOLIKO SE KORISTI LATINICA ONDA OBRISATI ILI KOMENTIRATI OVAJ DEO %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AtBeginDocument{\renewcommand{\contentsname}{\LARGE{Садржај}}}
+\AtBeginDocument{\renewcommand{\listfigurename}{Списак слика}}
+\AtBeginDocument{\renewcommand{\figurename}{Слика}}
+\AtBeginDocument{\renewcommand{\tablename}{Табела}}
+\AtBeginDocument{\renewcommand{\listtablename}{Списак табела}}
+\AtBeginDocument{\renewcommand{\glossaryname}{Списак кориштених ознака}}
+\AtBeginDocument{\renewcommand{\abstractname}{Сажетак}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UKOLIKO SE KORISTI LATINICA ONDA OBRISATI ILI KOMENTIRATI OVAJ DEO %
+%%%%%%%%%%%%%%%%%%% SAMO ZA UPOTREBU ĆIRILICE %%%%%%%%%%%%%%%%%%%%%%%%
+%____________________________________________________________________%
+%____________________________________________________________________%
+%____________________________________________________________________%
+%____________________________________________________________________%
+%____________________________________________________________________%
+%____________________________________________________________________%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%&&&&&&&& POČETAK DOKUMENTA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\onehalfspacing
+\justifying
+\sloppy
+\begin{titlepage}
+	\begin{center}
+	\line(1,0){500}\\
+	[0.5cm]
+	\huge{\bfseries Назив предмета}\\ % Naziv predmeta i sl.
+	[2mm]
+	\line(1,0){500}\\
+	\textsc{\large{Пројектни задатак}}\\% Tip projekta i sl.
+	[1.5cm]	
+	 \vspace*{2\baselineskip}
+    \begin{center} % Centriranje slike, teksta...
+\resizebox{0.3\textwidth}{!}{ 
+\includegraphics{{example-image-a}} % Logo fakulteta ili slično
+} %close resizebox    
+\end{center}
+    {\Large Машински факултет Универзитета у Београду} \\ {\large Катедра за ...} \\ % Ime ustanove i katedre
+   
+	\end{center}
+
+	\begin{flushright}
+	\vfill
+	\textsc{\large Ime i prezime učesnika 1 \\ % imena autora
+	Ime i prezime učesnika 2\\
+	Ime i prezime učesnika 3\\}
+	\end{flushright}
+	
+\end{titlepage}
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+
+\section{Odeljak}
+
+Zavisnost dinamičke viskoznosti i temperature fluida je prikazana u tabeli \ref{tab:din_vis}.
+\begin{table}[H]
+\small
+\centering
+\begin{tabular}{@{}lcc@{}}
+\textbf{Fluid} & \textbf{Temperatura} [$^{\circ}$C] & \textbf{Dinamička viskoznost} [Pa s] \\
+\bottomrule
+Vazduh/Zrak  & 20  & $18.5 \cdot 10^{-6}$   \\
+
+Vazduh/Zrak  & 100  & $21.74 \cdot 10^{-6}$   \\
+
+Voda & 20 & $1.0016 \cdot 10^{-3}$\\
+
+Voda & 100 &  $0.2822 \cdot 10^{-3}$\\
+
+Med & 20 & 2000 $\div$ 10000\\
+
+VW G13 (50--50) & 20  & $28.9 \cdot 10^{-3}$\\
+
+Motorno ulje & 0 & 1.328\\
+
+Motorno ulje & 100 & 0.01316\\
+\bottomrule
+\end{tabular}
+\caption{Vrednosti dinamičke viskoznosti sveprisutnih fluida.}
+\label{tab:din_vis}
+\end{table}
+
+
+\subsection{Pododeljak}
+Između ostalog, Rejnoldsovo\footnote{Osborne Reynolds  (\textit{{1842-1912}}) je bio irski istaknuti naučnik iz oblasti mehanike fluida.} osrednjavanje Navije--Stoksovih jednačina. Prikaz drugog slova abecede je dat na slici \ref{fig:slovo_B}.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{example-image-b}
+    \caption{Slovo B.}
+    \label{fig:slovo_B}
+\end{figure}
+
+
+
+\subsubsection{Podpododeljak}
+
+\begin{equation}
+    x:\ \displaystyle \rho \left(\frac{\partial \bar{u} }{\partial t}\right) + \rho \left(\bar{u}\frac{\partial \bar{u} }{\partial x}+ \bar{v}\frac{\partial \bar{u} }{\partial y}\right) = - \frac{\partial \bar{p} }{\partial x} + \mu \nabla^{2}\bar{u} - \rho \left(\overline{u^{\prime}\frac{\partial u^{\prime}}{\partial x}} +\overline{v^{\prime}\frac{\partial u^{\prime}}{\partial y}}\right)
+\end{equation}
+\begin{equation}
+    y:\ \displaystyle \rho \left(\frac{\partial \bar{v} }{\partial t}\right) + \rho \left(\bar{u}\frac{\partial \bar{v} }{\partial x}+ \bar{v}\frac{\partial \bar{v} }{\partial y}\right) = - \frac{\partial \bar{p} }{\partial y} + \mu \nabla^{2}\bar{v} - \rho \left(\overline{u^{\prime}\frac{\partial v^{\prime}}{\partial x}} +\overline{v^{\prime}\frac{\partial v^{\prime}}{\partial y}}\right)
+\end{equation}
+
+\clearpage
+\section{Odeljak}
+
+\end{document}
