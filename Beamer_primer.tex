@@ -1,0 +1,205 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation templejt za područje bivše Jugoslavije
+% Version 1.0 (13/3/22)
+%
+%
+% Autor: Prometej
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-----------------------------------------------------------------------
+%	PAKETI i TEME
+%-----------------------------------------------------------------------
+
+\documentclass{beamer} % Definisanje klase dokumenta
+\usepackage[T1]{fontenc} 
+\usepackage[T1,T2A]{fontenc}
+\usepackage{graphicx} % Paket kojima se omogućuje prikaz slika
+\usepackage{booktabs} % itd.
+\usepackage{amsmath}
+\usepackage{url,color}
+\usepackage{subfigure}
+\usepackage{amsthm,amsfonts,amssymb,amscd,amsxtra}
+\usepackage{ragged2e}
+\usepackage{wasysym}
+\setbeamertemplate{caption}[numbered]
+\usepackage{textcomp}
+\renewcommand{\raggedright}{\justifying}
+\usepackage[serbian]{babel}
+\mode<presentation> {
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\usepackage{circuitikz}
+\usetikzlibrary{patterns}
+% Prilikom pravljenje dokumenata klase Beamer, postoje raznovrsne teme  % na raspolaganju korisnicima.
+% Temama su definisane boje, okviri. 
+% Odkomentirajte različite teme (brisanjem %) i vidite koja je          % najpodobnija.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+
+% Ispod liste za teme, se nalazi lista boja.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+
+%\setbeamertemplate{navigation symbols}{} % Ako želite da uklonite oznake za navigaciju kroz dokument, koje se nalaze na stranicama odkomentirajte ovu liniju koda.
+
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%% NASLOVNA STRANA %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[Naslov]{Naslov 1} % Ovo je naslov koji će biti prikazan na dnu svake strane
+
+\author{Autor} % Ime autora
+
+\vspace*{-0.5cm}
+\titlegraphic{\includegraphics[width=3cm]{example-image-a}\qquad} % LOGO odnosno slika
+
+\date{\today} % Datum - može se promeniti tako da ispisuje datum osim današnjeg
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\x}{\textbf{x}}
+\newcommand{\y}{\textbf{y}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newcommand{\dom}{\mathrm{dom}}
+\newcommand{\ad}{\mathrm{ad}}
+\newcommand{\gerado}{\mathrm{span}}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Ispis naslova
+\end{frame}
+
+{
+\begin{frame}
+\frametitle{Sadržaj} % Sadržaj rada
+\tableofcontents
+\end{frame}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%% POČETAK RADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------%
+\section{Uvod} % Naslov koji se ispisuje u sadržaj
+\frame{
+\frametitle{\textbf{Uvod}} % Naslov koji se ispisuje na stranici
+
+\setbeamertemplate{itemize items}[square] % Vrsta obeležavača spiska, uvom slučaju je to crni kvadrat
+  \begin{itemize}
+    \item Prvi element spiska
+    \vspace{0.3cm} % Deklarisanje odstojanja između elemenata spiska
+    \item Drugi element spiska
+    \vspace{0.3cm}
+    \item Treći element spiska
+    \vspace{0.3cm}
+    \item Може и ћирилицом
+  \end{itemize}
+}
+
+%-------------------------------------------------%
+\begin{frame}
+\section{Glava 1}
+\frametitle{\textbf{Naslov Glave 1}}
+
+
+\end{frame}
+
+%-------------------------------------------------%
+\section{Glava 2}
+\begin{frame}
+    \frametitle{\textbf{Naslov Glave 2}}
+
+
+\end{frame}
+%-----------------------------------------------%
+\subsection{Podnaslov}
+\begin{frame}
+    \frametitle{Naslov podnaslova 3.1.}
+
+\begin{figure} % Upuststvo za uporedi prikaz dveju slika
+   \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{example-image-b} 
+            \caption{Opis prve slike.}
+            \label{fig:prva_slika} % Označavanje slike, koristi se za potonje pozivanje na sliku u daljem tekstu
+        \end{minipage}
+        \hspace{0.5cm}
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{example-image-a} 
+            \caption{Opis druge slike.}
+            \label{fig:druga_slika}
+    \end{minipage}
+\end{figure}  
+
+\begin{itemize}
+    \item Na slici \ref{fig:druga_slika} možete videti 1. slovo abecede
+\end{itemize}
+  
+\end{frame}
+%------------------------------------------------%
+\begin{frame}
+\frametitle{Jednačine} %
+\setbeamertemplate{itemize items}[square]
+ \begin{itemize}
+     \item Ispivanje jednačina je identično kao u drugim klasama \LaTeX--a 
+     \vspace{0.1cm}
+ \end{itemize}
+ \begin{equation}
+     \sigma = \varepsilon \cdot E
+ \end{equation}
+
+ 
+\end{frame}
+%----------------------------------------------------%
+\end{document}
+
